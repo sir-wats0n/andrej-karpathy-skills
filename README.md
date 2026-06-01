@@ -96,6 +96,23 @@ Strong success criteria let the LLM loop independently. Weak criteria ("make it 
 
 ## Install
 
+### Cursor
+
+**All projects (recommended):** copy or symlink the skill into your personal skills folder:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills\karpathy-guidelines"
+Copy-Item -Path "skills\karpathy-guidelines\SKILL.md" -Destination "$env:USERPROFILE\.cursor\skills\karpathy-guidelines\SKILL.md"
+```
+
+After that, Cursor discovers `karpathy-guidelines` automatically from the skill description. You can also invoke it explicitly (e.g. `@karpathy-guidelines` in chat, depending on your Cursor version).
+
+**This repo only:** when this folder is your workspace root, `.cursor/skills/karpathy-guidelines/SKILL.md` is already set up for project-scoped use.
+
+**Always-on (user rule):** copy the compact block from [karpathy-guidelines-user-rule.md](karpathy-guidelines-user-rule.md) into **Cursor Settings → Rules → User Rules**. A global rule file is also installed at `%USERPROFILE%\.cursor\rules\karpathy-guidelines.mdc`.
+
+### Claude Code
+
 **Option A: Claude Code Plugin (recommended)**
 
 From within Claude Code, first add the marketplace:
